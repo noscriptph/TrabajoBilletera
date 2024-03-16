@@ -10,13 +10,13 @@ import java.io.IOException;
 
 /**
  * Ejecuta solamente a la clase Menu siguiendo recomendacion
- * y buena practica de mantener el mai lo mas lipio posible
+ * y buena práctica de mantener el main lo más limpio posible
  */
 public class Main {
     /**
      * @Autor Victor Paillacar
      * @Descripcion Ejecuta solamente a la clase Menu siguiendo recomendacion
-     *   y buena practica de mantener el mai lo mas lipio posible
+     * y buena práctica de mantener el main lo más limpio posible
      */
     public static void main(String[] args) throws IOException, InterruptedException {
 

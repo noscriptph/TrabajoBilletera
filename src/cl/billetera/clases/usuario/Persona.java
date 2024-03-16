@@ -5,6 +5,7 @@
 package cl.billetera.clases.usuario;
 
 import java.io.IOException;
+import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
 public class Persona {
@@ -63,12 +64,20 @@ public class Persona {
     public void setIdUsuario(long idUsuario) {
         this.idUsuario = idUsuario;
     }
-    /*
+
+     /*
     4)Metodos de comportamiento
      */
-public static void crearUsuarioYMontosInciales() throws IOException, InterruptedException {
+    /**
+     * Permite crear un usuario con sus correspondientes datos personales y
+     * generar un id.
+     */
+    public static void crearUsuarioYMontosInciales() throws IOException, InterruptedException {
     new ProcessBuilder("cmd", "/c","cls").inheritIO().start().waitFor();
     System.out.println("Crea usuario y configurar montos iniciales");
+
+        System.out.println("Ingrese el nombre del Usuario");
+        Scanner scanner=new Scanner(System.in);
 
 
 
@@ -83,7 +92,7 @@ public static void crearUsuarioYMontosInciales() throws IOException, Interrupted
     TimeUnit.SECONDS.sleep(1);
     System.out.print(".");
     TimeUnit.SECONDS.sleep(1);
-}
+    }
 
         /*
     5)Metodos utilitarios o de logica
