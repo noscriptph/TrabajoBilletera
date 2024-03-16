@@ -94,9 +94,6 @@ public class Menu {
                     case "1":
                              Persona.crearUsuarioYMontosInciales();
 
-                        System.out.println("Usuario creado y monto asignado");
-
-
                         break;
 
 

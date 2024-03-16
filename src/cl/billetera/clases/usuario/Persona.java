@@ -5,6 +5,7 @@
 package cl.billetera.clases.usuario;
 
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
 public class Persona {
     /*
@@ -14,7 +15,7 @@ public class Persona {
     */
     private String nombreUsuario;
     private String rutUsuario;
-    protected Long idUsuario;
+    public Long idUsuario;
 
 
 
@@ -67,10 +68,21 @@ public class Persona {
      */
 public static void crearUsuarioYMontosInciales() throws IOException, InterruptedException {
     new ProcessBuilder("cmd", "/c","cls").inheritIO().start().waitFor();
-    System.out.println("");
+    System.out.println("Crea usuario y configurar montos iniciales");
 
 
 
+
+    //limpiar consola y volver al menu
+    new ProcessBuilder("cmd", "/c","cls").inheritIO().start().waitFor();
+    System.out.println("Usuario creado y monto asignado");
+    System.out.print("Volviendo al menu");
+    System.out.print(".");
+    TimeUnit.SECONDS.sleep(1);
+    System.out.print(".");
+    TimeUnit.SECONDS.sleep(1);
+    System.out.print(".");
+    TimeUnit.SECONDS.sleep(1);
 }
 
         /*
