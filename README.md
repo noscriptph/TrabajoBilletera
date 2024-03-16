@@ -63,3 +63,10 @@ aspectos más relevantes del proyecto.
 
 Se diseño el menu de entrada y salida de tal forma que el usuario sienta que la aplicacion esta mas viva y le recuerde a cualquier aplicacion del diario vivir que corre en terminal(esto tomando de referencia aplicaciones ejecutadas en linux, windows como parches, actualizaciones, navegacion por carpetas, etc).
 Ademas el uso debe ser intuitivo y que independiente de lo ingresado por el usuario no existan problemas de cuelgues o errores en pantalla, solo alertas lo mas simple y amigables posibles asi evitar frustracion por parte del usuario.
+
+##MAIN
+![main](https://github.com/noscriptph/TrabajoBilletera/assets/103396791/66f9b259-fe9e-4d86-822d-d63a3a1c6435)
+
+el unico trabajo de main.java es hacer un llamado a menú.menuAplicacion(). Esto para mantener una buena costumbre de evitar sobrecargar el main con codigo innecesario y
+prepararme a aprender kotlin y usar Android Studio
+![butter robot](https://github.com/noscriptph/TrabajoBilletera/assets/103396791/191af339-c7fb-406e-bf20-e8cb37ab56b5)
