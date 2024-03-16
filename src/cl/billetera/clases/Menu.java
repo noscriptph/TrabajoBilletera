@@ -39,7 +39,7 @@ public class Menu {
     */
 
     /**
-     * @Descripcion Este metodo de comportamiento es muy importante ya que es la base de todo el funcionamiento de la aplicacion,
+     * {@code @Descripcion} Este metodo de comportamiento es muy importante ya que es la base de todo el funcionamiento de la aplicacion,
      * permite hacer todas las funciones que espera el cliente, ademas de incluir un menu de cerrado intuitivo y tener
      * un control de errores al momento de ingresar mal las opciones.
      * Uso la opcion de   TimeUnit.SECONDS.sleep(3);    para qe el cliente al cerrar logre leer el mensaje  que la
