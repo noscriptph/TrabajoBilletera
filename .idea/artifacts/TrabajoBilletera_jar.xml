@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="TrabajoBilletera:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/TrabajoBilletera_jar</output-path>
+    <root id="archive" name="TrabajoBilletera.jar">
+      <element id="module-output" name="TrabajoBilletera" />
+    </root>
+  </artifact>
+</component>
