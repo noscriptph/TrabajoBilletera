@@ -69,4 +69,5 @@ Ademas el uso debe ser intuitivo y que independiente de lo ingresado por el usua
 
 el unico trabajo de main.java es hacer un llamado a menú.menuAplicacion(). Esto para mantener una buena costumbre de evitar sobrecargar el main con codigo innecesario y
 prepararme a aprender kotlin y usar Android Studio
+
 ![butter robot](https://github.com/noscriptph/TrabajoBilletera/assets/103396791/191af339-c7fb-406e-bf20-e8cb37ab56b5)
