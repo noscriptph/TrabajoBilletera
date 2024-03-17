@@ -65,7 +65,7 @@ public class Menu {
                 // Aca muestro por pantalla el menu
                 //en windows esta linea limpia la consola
                 new ProcessBuilder("cmd", "/c","cls").inheritIO().start().waitFor();
-                System.out.println("");
+                System.out.println("Usuario"+Persona.getIdUsuario());
 
                 System.out.println("MENU");
                 System.out.println("    1) Crear usuario");

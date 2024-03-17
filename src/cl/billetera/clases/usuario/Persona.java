@@ -10,7 +10,7 @@ import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
 /**
- * se utiliza el modificador de acceso protected para utilizar las
+ * Se utiliza el modificador de acceso protected para utilizar las
  * variables en otras clases
  */
 public class Persona {
@@ -22,8 +22,8 @@ public class Persona {
 
     protected static String nombreUsuario;
     protected static String rutUsuario;
-    protected static Random idUsuario;
-    protected String password;
+    private static Random idUsuario;
+    protected static String password;
 
      /*
     2)Constructor
@@ -35,11 +35,13 @@ public class Persona {
      * @param nombreUsuario almacena el nombre del usuario
      * @param rutUsuario    almacena el rut del usuario
      * @param idUsuario     le asigna un id que sera usado para representar al usuario
+     * @param password      guarda la contraseña para el usuario creado
      */
-    public Persona(String nombreUsuario, String rutUsuario, Random idUsuario) {
+    public Persona(String nombreUsuario, String rutUsuario, Random idUsuario, String password) {
         this.nombreUsuario = nombreUsuario;
         this.rutUsuario = rutUsuario;
         this.idUsuario = idUsuario;
+        this.password=password;
     }
     /*
     3)Metodos de acceso
@@ -69,27 +71,24 @@ public class Persona {
         Persona.idUsuario = idUsuario;
     }
 
-    public String getPassword() {
+    public static String getPassword() {
         return password;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public static void setPassword(String password) {
+        Persona.password = password;
     }
-
+/*
+    4)Metodos de comportamiento
+     */
     /**
      * Permite crear un usuario con sus correspondientes datos personales y
      * generar un id.
      */
 
-
-
-/*
-    4)Metodos de comportamiento
-     */
     public static void crearUsuarioYMontosInciales() throws IOException, InterruptedException {
         new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
-        System.out.println("Crea usuario y configurar montos iniciales");
+        System.out.println("Crea usuario y configurar contraseña");
 
         System.out.println("Ingrese el nombre del Usuario");
         Scanner scanner = new Scanner(System.in);
@@ -97,10 +96,14 @@ public class Persona {
         setNombreUsuario(scanner.next());
         System.out.println("Ingrese el rut del usuario sin pintos y con guion");
         System.out.println("    ejemplo:  19000123-0");
+        scanner.next();
         setRutUsuario(scanner.next());
         setIdUsuario(new Random());
         System.out.println("indique una contraseña de 10 caracteres");
         System.out.print("contraseña: ");
+
+        setPassword(scanner.next());
+        setPassword(getPassword().substring(1,10));
 
         //limpiar consola y volver al menu
         new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
