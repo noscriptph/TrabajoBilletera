@@ -15,7 +15,7 @@ import java.io.IOException;
 public class Main {
     /**
      * {@code @Author} Victor Paillacar
-     * {@code @Descripcion} Ejecuta solamente a la clase Menu siguiendo recomendacion
+     * {@code @Description} Ejecuta solamente a la clase Menu siguiendo recomendacion
      * y buena práctica de mantener el main lo más limpio posible
      */
     public static void main(String[] args) throws IOException, InterruptedException {

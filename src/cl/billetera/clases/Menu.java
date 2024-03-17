@@ -68,21 +68,21 @@ public class Menu {
                 System.out.println("");
 
                 System.out.println("MENU");
-                System.out.println("        1) Crear usuario y asignar montos iniciales");
+                System.out.println("    1) Crear usuario");
 
-                System.out.println("        2) Iniciar sesion");
+                System.out.println("    2) Iniciar sesion");
 
-                System.out.println("        3) Depositar o retirar dinero");
+                System.out.println("    3) Depositar o retirar dinero");
 
-                System.out.println("        4) Depositar o retirar divisas");
+                System.out.println("    4) Depositar o retirar divisas");
 
-                System.out.println("        5) Ver estado de Cuenta");
+                System.out.println("    5) Ver estado de Cuenta");
 
-                System.out.println("        6) Realizar conversion de dinero");
+                System.out.println("    6) Realizar conversion de dinero");
 
-                System.out.println("        7) Ver valores de conversion");
+                System.out.println("    7) Ver valores de conversion");
 
-                System.out.println("        8) Salir (La informacion ingresada sera borrada)");
+                System.out.println("    8) Salir (La informacion ingresada sera borrada)");
 
                 System.out.print("Escriba un numero: ");
 

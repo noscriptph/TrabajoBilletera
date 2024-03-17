@@ -1,7 +1,7 @@
 
 # Billetera Virtual
 
-Proyecto basado en proyecto asigando en bootcamp en la estapa de java.
+Proyecto basado en proyecto asignado en bootcamp en la estapa de java.
 
 
 

@@ -4,25 +4,38 @@
 
 package cl.billetera.clases.usuario;
 
-public class Cuenta {
+import java.util.Random;
+
+
+public  class Cuenta{
     /*
 1)Atributos de una clase
 modificadores de acceso, son parte de los polimorfismos
 public, private, protected y son palabras reservadas
 */
-    long saldoEnLaCuenta;
+    private long saldoEnLaCuenta;
 
 
      /*
     2)Constructor
      */
 
-
-     /*
+    public Cuenta(long saldoEnLaCuenta) {
+        this.saldoEnLaCuenta = saldoEnLaCuenta;
+    }
+/*
     3)Metodos de acceso
      */
 
-    /*
+    public long getSaldoEnLaCuenta() {
+        return saldoEnLaCuenta;
+    }
+
+    public void setSaldoEnLaCuenta(long saldoEnLaCuenta) {
+        this.saldoEnLaCuenta = saldoEnLaCuenta;
+    }
+
+/*
     4)Metodos de comportamiento
      */
 
