@@ -96,13 +96,13 @@ public class Persona {
         setNombreUsuario(scanner.next());
         System.out.println("Ingrese el rut del usuario sin pintos y con guion");
         System.out.println("    ejemplo:  19000123-0");
-        scanner.next();
-        setRutUsuario(scanner.next());
+        scanner.nextLine();
+        setRutUsuario(scanner.nextLine());
         setIdUsuario(new Random());
         System.out.println("indique una contraseña de 10 caracteres");
         System.out.print("contraseña: ");
 
-        setPassword(scanner.next());
+        setPassword(scanner.nextLine());
         setPassword(getPassword().substring(1,10));
 
         //limpiar consola y volver al menu
