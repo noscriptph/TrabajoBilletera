@@ -23,6 +23,8 @@ public, private, protected y son palabras reservadas
     public Cuenta(long saldoEnLaCuenta) {
         this.saldoEnLaCuenta = saldoEnLaCuenta;
     }
+
+
 /*
     3)Metodos de acceso
      */
@@ -39,6 +41,11 @@ public, private, protected y son palabras reservadas
     4)Metodos de comportamiento
      */
 
+
+public static void verSaldo(){
+
+
+}
         /*
     5)Metodos utilitarios o de logica
      */

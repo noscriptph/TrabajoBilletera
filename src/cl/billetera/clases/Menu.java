@@ -1,6 +1,7 @@
 package cl.billetera.clases;
 
 import cl.billetera.clases.usuario.Persona;
+import cl.billetera.clases.usuario.Cuenta;
 import com.sun.jdi.InternalException;
 
 
@@ -65,16 +66,16 @@ public class Menu {
                 // Aca muestro por pantalla el menu
                 //en windows esta linea limpia la consola
                 new ProcessBuilder("cmd", "/c","cls").inheritIO().start().waitFor();
-                System.out.println("Usuario"+Persona.getIdUsuario());
 
                 System.out.println("MENU");
+
                 System.out.println("    1) Crear usuario");
 
                 System.out.println("    2) Iniciar sesion");
 
-                System.out.println("    3) Depositar o retirar dinero");
+                System.out.println("    3) Ver saldo en la cuenta");
 
-                System.out.println("    4) Depositar o retirar divisas");
+                System.out.println("    4) Depositar o retirar dinero");
 
                 System.out.println("    5) Ver estado de Cuenta");
 
@@ -84,6 +85,8 @@ public class Menu {
 
                 System.out.println("    8) Salir (La informacion ingresada sera borrada)");
 
+
+
                 System.out.print("Escriba un numero: ");
 
 
@@ -92,20 +95,20 @@ public class Menu {
 
                 switch (menu) {
                     case "1":
-                             Persona.crearUsuarioYMontosInciales();
+                             Persona.crearUsuario();
 
                         break;
 
 
                     case "2":
-
+                            Persona.inciarSesion();
 
 
                         break;
 
 
                     case "3":
-
+                            Cuenta.verSaldo();
 
 
                         break;
