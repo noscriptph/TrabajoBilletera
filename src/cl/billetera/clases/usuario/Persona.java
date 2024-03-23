@@ -25,8 +25,8 @@ public class Persona {
     protected static String password;
     private static Random idUsuario;
     private static String correoElectronico;
-
-    protected boolean sesionActiva=false;
+    protected boolean sesionActiva = false;
+    private boolean isMayorEdad;
 
      /*
     2)Constructor
@@ -34,19 +34,14 @@ public class Persona {
 
     /**
      * Obliga que al crear una persona se deban ingresar todos sus datos
-     *
-     * @param nombreUsuario     almacena el nombre del usuario
-     * @param rutUsuario        almacena el rut del usuario
-     * @param idUsuario         le asigna un id que sera usado para representar al usuario
-     * @param password          guarda la contraseña para el usuario creado
-     * @param correoElectronico guarda el correo del usuario
      */
-    public Persona(String nombreUsuario, String rutUsuario, Random idUsuario, String password, String correoElectronico) {
+    public Persona() {
         this.nombreUsuario = nombreUsuario;
         this.rutUsuario = rutUsuario;
         this.idUsuario = idUsuario;
         this.password = password;
         this.correoElectronico = correoElectronico;
+        this.sesionActiva = sesionActiva;
     }
     /*
     3)Metodos de acceso
@@ -91,6 +86,7 @@ public class Persona {
     public static void setCorreoElectronico(String correoElectronico) {
 
     }
+
 
     /**
      * Permite crear un usuario con sus correspondientes datos personales y
@@ -195,7 +191,16 @@ public class Persona {
     public static void setSesionActiva(boolean sesionActiva) {
 
     }
-        /*
-    5)Metodos utilitarios o de logica
-     */
+
+    /*
+5)Metodos utilitarios o de logica
+ */
+    public boolean verificarMayoriaEdadUsuario(int edadusuarioIngresada) {
+        if ((edadusuarioIngresada >= 18)&& edadusuarioIngresada <= 120) {
+            this.isMayorEdad = true;
+        } else {
+            this.isMayorEdad = false;
+        }
+        return this.isMayorEdad;
+    }
 }
