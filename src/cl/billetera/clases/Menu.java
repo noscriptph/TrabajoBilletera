@@ -83,7 +83,9 @@ public class Menu {
 
                 System.out.println("    7) Ver valores de conversion");
 
-                System.out.println("    8) Salir (La informacion ingresada sera borrada)");
+                System.out.println("    8) ");
+
+                System.out.println("    9) Salir (La informacion ingresada sera borrada)");
 
 
 
@@ -101,7 +103,8 @@ public class Menu {
 
 
                     case "2":
-                            Persona.inciarSesion();
+                        Persona.verificarMayoriaEdadUsuario();
+                            Persona.iniciarSesion();
 
 
                         break;
@@ -135,9 +138,12 @@ public class Menu {
 
 
                         break;
+                     case "8":
+
+                         break;
 
 
-                    case "8":
+                    case "9":
                         new ProcessBuilder("cmd", "/c","cls").inheritIO().start().waitFor();
                         System.out.println("");
                         System.out.println("Muchas gracias por preferirnos");

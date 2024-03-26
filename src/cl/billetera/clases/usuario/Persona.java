@@ -25,8 +25,8 @@ public class Persona {
     protected static String password;
     private static Random idUsuario;
     private static String correoElectronico;
+    private static boolean isMayorEdad;
     protected boolean sesionActiva = false;
-    private boolean isMayorEdad;
 
      /*
     2)Constructor
@@ -95,41 +95,46 @@ public class Persona {
 
     public static void crearUsuario() throws IOException, InterruptedException {
         new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
-        System.out.println("Crea usuario y configurar contraseña");
+        if (isMayorEdad) {
+            System.out.println("Crea usuario y configurar contraseña");
 
-        System.out.println("Ingrese el nombre del Usuario");
-        Scanner scanner = new Scanner(System.in);
+            System.out.println("Ingrese el nombre del Usuario");
+            Scanner scanner = new Scanner(System.in);
 
-        setNombreUsuario(scanner.next());
-        System.out.println("Ingrese el rut del usuario sin pintos y con guion");
-        System.out.println("    ejemplo:  19000123-0");
-        scanner.nextLine();
-        setRutUsuario(scanner.nextLine());
-        setIdUsuario(new Random());
-        System.out.println("Ingrese su Email:");
-        setCorreoElectronico(scanner.nextLine());
+            setNombreUsuario(scanner.next());
+            System.out.println("Ingrese el rut del usuario sin pintos y con guion");
+            System.out.println("    ejemplo:  19000123-0");
+            scanner.nextLine();
+            setRutUsuario(scanner.nextLine());
+            setIdUsuario(new Random());
+            System.out.println("Ingrese su Email:");
+            setCorreoElectronico(scanner.nextLine());
 
-        System.out.println("Indique una contraseña de 10 caracteres");
-        System.out.println("solo se permiten 10 caracteres, el resto sera eliminado");
-        System.out.print("contraseña: ");
+            System.out.println("Indique una contraseña de 10 caracteres");
+            System.out.println("solo se permiten 10 caracteres, el resto sera eliminado");
+            System.out.print("contraseña: ");
 
-        setPassword(scanner.nextLine());
-        setPassword(getPassword().substring(0, 10));
+            setPassword(scanner.nextLine());
+            setPassword(getPassword().substring(0, 10));
 
 
-        //limpiar consola y volver al menu
-        new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
-        System.out.println("Usuario creado");
-        System.out.print("Volviendo al menu");
-        System.out.print(".");
-        TimeUnit.SECONDS.sleep(1);
-        System.out.print(".");
-        TimeUnit.SECONDS.sleep(1);
-        System.out.print(".");
-        TimeUnit.SECONDS.sleep(1);
+            //limpiar consola y volver al menu
+            new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+            System.out.println("Usuario creado");
+            System.out.print("Volviendo al menu");
+            System.out.print(".");
+            TimeUnit.SECONDS.sleep(1);
+            System.out.print(".");
+            TimeUnit.SECONDS.sleep(1);
+            System.out.print(".");
+            TimeUnit.SECONDS.sleep(1);
+        } else {
+            System.out.print("Edad no valida para utilizar esta aplicacion ");
+        }
+
     }
 
-    public static void inciarSesion() throws IOException, InterruptedException {
+    public static void iniciarSesion() throws IOException, InterruptedException {
         new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
 
         String textoAComparar1;
@@ -142,7 +147,7 @@ public class Persona {
         Scanner scanner2 = new Scanner(System.in);
         textoAComparar2 = scanner2.nextLine();
 
-        if ((textoAComparar1.equals(getCorreoElectronico())) && (textoAComparar2.equals(getPassword()))) {
+        if ((textoAComparar1.equalsIgnoreCase(getCorreoElectronico())) && (textoAComparar2.equalsIgnoreCase(getPassword()))) {
             System.out.println("Sesion iniciada correctamente");
             setSesionActiva(true);
             //limpiar consola y volver al menu
@@ -158,7 +163,7 @@ public class Persona {
 
 
         } else {
-            System.out.println("Usuario o contraseña equivocados");
+            System.out.println("Usuario o contraseña incorrectos");
             System.out.println("Intentelo nuevamente o contacte con entidad bancaria");
 
             //limpiar consola y volver al menu
@@ -180,6 +185,21 @@ public class Persona {
 
 
     }
+
+    protected static boolean getSesionActiva() {
+        return false;
+    }
+
+    public static boolean verificarMayoriaEdadUsuario() {
+        int edadusuarioIngresada = 0;
+        if ((edadusuarioIngresada >= 18) && edadusuarioIngresada <= 120) {
+            isMayorEdad = true;
+        } else {
+           isMayorEdad = false;
+        }
+
+        return false;
+    }
     /*
     4)Metodos de comportamiento
      */
@@ -195,12 +215,8 @@ public class Persona {
     /*
 5)Metodos utilitarios o de logica
  */
-    public boolean verificarMayoriaEdadUsuario(int edadusuarioIngresada) {
-        if ((edadusuarioIngresada >= 18)&& edadusuarioIngresada <= 120) {
-            this.isMayorEdad = true;
-        } else {
-            this.isMayorEdad = false;
-        }
-        return this.isMayorEdad;
+    public static boolean verificarMayoriaEdadUsuario(int edadusuarioIngresada) {
+
+        return false;
     }
 }
