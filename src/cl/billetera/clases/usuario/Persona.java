@@ -148,6 +148,7 @@ public class Persona {
         Scanner scanner2 = new Scanner(System.in);
         textoAComparar2 = scanner2.nextLine();
 
+
         if ((textoAComparar1.equals(getCorreoElectronico()))) {
            if(textoAComparar2.equals(getPassword())) {
                System.out.println("Sesion iniciada correctamente");
