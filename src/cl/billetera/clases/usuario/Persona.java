@@ -26,7 +26,7 @@ public class Persona {
     private static Random idUsuario;
     private static String correoElectronico;
     private static boolean isMayorEdad;
-    protected boolean sesionActiva = false;
+    private boolean sesionActiva = false;
 
      /*
     2)Constructor
@@ -143,24 +143,26 @@ public class Persona {
         Scanner scanner1 = new Scanner(System.in);
         textoAComparar1 = scanner1.nextLine();
 
+
         System.out.println("Ingrese su contraseña");
         Scanner scanner2 = new Scanner(System.in);
         textoAComparar2 = scanner2.nextLine();
 
-        if ((textoAComparar1.equalsIgnoreCase(getCorreoElectronico())) && (textoAComparar2.equalsIgnoreCase(getPassword()))) {
-            System.out.println("Sesion iniciada correctamente");
-            setSesionActiva(true);
-            //limpiar consola y volver al menu
-            new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+        if ((textoAComparar1.equals(getCorreoElectronico()))) {
+           if(textoAComparar2.equals(getPassword())) {
+               System.out.println("Sesion iniciada correctamente");
+               setSesionActiva(true);
+               //limpiar consola y volver al menu
+               new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
 
-            System.out.print("Volviendo al menu");
-            System.out.print(".");
-            TimeUnit.SECONDS.sleep(1);
-            System.out.print(".");
-            TimeUnit.SECONDS.sleep(1);
-            System.out.print(".");
-            TimeUnit.SECONDS.sleep(1);
-
+               System.out.print("Volviendo al menu");
+               System.out.print(".");
+               TimeUnit.SECONDS.sleep(1);
+               System.out.print(".");
+               TimeUnit.SECONDS.sleep(1);
+               System.out.print(".");
+               TimeUnit.SECONDS.sleep(1);
+           }
 
         } else {
             System.out.println("Usuario o contraseña incorrectos");
@@ -191,14 +193,17 @@ public class Persona {
     }
 
     public static boolean verificarMayoriaEdadUsuario() {
-        int edadusuarioIngresada = 0;
+        System.out.println("Ingrese su edad");
+        Scanner scanner = new Scanner(System.in);
+        int edadusuarioIngresada = Integer.parseInt(scanner.nextLine());
+
         if ((edadusuarioIngresada >= 18) && edadusuarioIngresada <= 120) {
             isMayorEdad = true;
         } else {
            isMayorEdad = false;
         }
 
-        return false;
+        return isMayorEdad;
     }
     /*
     4)Metodos de comportamiento

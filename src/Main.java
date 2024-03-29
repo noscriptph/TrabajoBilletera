@@ -9,13 +9,13 @@ import cl.billetera.clases.Menu;
 import java.io.IOException;
 
 /**
- * Ejecuta solamente a la clase Menu siguiendo recomendacion
+ * Ejecuta solamente a la clase Menu siguiendo recomendación
  * y buena práctica de mantener el main lo más limpio posible
  */
 public class Main {
     /**
      * {@code @Author} Victor Paillacar
-     * {@code @Description} Ejecuta solamente a la clase Menu siguiendo recomendacion
+     * {@code @Description} Ejecuta solamente a la clase Menu siguiendo recomendación
      * y buena práctica de mantener el main lo más limpio posible
      */
     public static void main(String[] args) throws IOException, InterruptedException {

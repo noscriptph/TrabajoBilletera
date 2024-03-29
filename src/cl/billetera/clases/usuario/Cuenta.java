@@ -5,7 +5,6 @@
 package cl.billetera.clases.usuario;
 
 import java.io.IOException;
-import java.util.Random;
 import java.util.Scanner;
 
 
@@ -36,8 +35,8 @@ public, private, protected y son palabras reservadas
         return saldoEnLaCuenta;
     }
 
-    public void setSaldoEnLaCuenta(long saldoEnLaCuenta) {
-        this.saldoEnLaCuenta = saldoEnLaCuenta;
+    public static void setSaldoEnLaCuenta(long saldoEnLaCuenta) {
+
     }
 
 /*
@@ -71,7 +70,22 @@ public void depositarORetirarDinero() throws IOException, InterruptedException {
 
 }
 
-    private void retirarDinero() {
+public static void menuDeTransaccion(){
+    System.out.println("Indique que desea hacer");
+    System.out.println("1)Retirar dinero");
+    System.out.println("2)Depositar dinero");
+    Scanner scanner = new Scanner(System.in);
+    String respuesta = scanner.nextLine();
+    if(respuesta.equals("1")){
+        retirarDinero();
+        System.out.println("Retirado");
+
+    }else if(respuesta.equals("2")){
+        depositarDinero();
+        System.out.println("Depositado");
+    }
+}
+    private static void retirarDinero() {
         System.out.println("Cuanto desea retirar dinero?");
         Scanner scanner = new Scanner(System.in);
         long retirar = scanner.nextLong();
@@ -79,7 +93,7 @@ public void depositarORetirarDinero() throws IOException, InterruptedException {
         setSaldoEnLaCuenta(getSaldoEnLaCuenta() - retirar);
     }
 
-    private void depositarDinero() {
+    private static void depositarDinero() {
     System.out.println("Cuanto desea depositar dinero?");
     Scanner scanner = new Scanner(System.in);
     long depositar = scanner.nextLong();

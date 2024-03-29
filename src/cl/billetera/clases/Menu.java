@@ -97,15 +97,14 @@ public class Menu {
 
                 switch (menu) {
                     case "1":
+                             Persona.verificarMayoriaEdadUsuario();
                              Persona.crearUsuario();
 
                         break;
 
 
                     case "2":
-                        Persona.verificarMayoriaEdadUsuario();
                             Persona.iniciarSesion();
-
 
                         break;
 
@@ -116,7 +115,7 @@ public class Menu {
 
                         break;
                     case "4":
-
+                            Cuenta.menuDeTransaccion();
 
                         break;
 
