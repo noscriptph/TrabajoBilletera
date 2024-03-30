@@ -10,17 +10,11 @@ import java.util.concurrent.TimeUnit;
 
 
 public  class Cuenta extends Persona  {
-    /*
-1)Atributos de una clase
-modificadores de acceso, son parte de los polimorfismos
-public, private, protected y son palabras reservadas
-*/
+
     private static long saldoEnLaCuenta=0;
 
 
-     /*
-    2)Constructor
-     */
+
 
     public Cuenta(long saldoEnLaCuenta,String nombreUsuario, String rutUsuario, String password, String correoElectronico, boolean sesionActiva, boolean isMayorEdad) {
 
@@ -28,9 +22,6 @@ public, private, protected y son palabras reservadas
     }
 
 
-/*
-    3)Metodos de acceso
-     */
 
     public static long getSaldoEnLaCuenta() {
         return saldoEnLaCuenta;
@@ -40,9 +31,7 @@ public, private, protected y son palabras reservadas
 
     }
 
-/*
-    4)Metodos de comportamiento
-     */
+
 
 
 public static void verSaldo(){
@@ -138,8 +127,6 @@ public static void menuDeTransaccion(){
 
     }
 
-        /*
-    5)Metodos utilitarios o de logica
-     */
+
 
 }

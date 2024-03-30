@@ -1,5 +1,6 @@
 package cl.billetera.clases;
 
+import cl.billetera.clases.usuario.CambioDeDivisa;
 import cl.billetera.clases.usuario.Persona;
 import cl.billetera.clases.usuario.Cuenta;
 import com.sun.jdi.InternalException;
@@ -18,26 +19,7 @@ import java.util.concurrent.TimeUnit;
 public class Menu {
 
     public static String menu;
-    /*
-    1)Atributos de una clase
-    modificadores de acceso, son parte de los polimorfismos
-    public, private, protected y son palabras reservadas
-     */
 
-
-
-     /*
-    2)Constructor
-     */
-
-
-    /*
-    3)Metodos de acceso
-     */
-
-   /*
-    4)Metodos de comportamiento
-    */
 
     /**
      * {@code @Descripcion} Este metodo de comportamiento es muy importante ya que es la base de todo el funcionamiento de la aplicacion,
@@ -127,7 +109,7 @@ public class Menu {
 
 
                     case "6":
-
+                        CambioDeDivisa.conversorMoneda();
 
                         break;
 
@@ -163,15 +145,11 @@ public class Menu {
 
                 }
             } catch (Exception e) {
-
-
                 throw new RuntimeException(e);
             }
 
 
-    /*
-    5)Metodos utilitarios o de logica
-     */
+
         }
     }
 
