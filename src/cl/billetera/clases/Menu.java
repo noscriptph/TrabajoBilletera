@@ -51,7 +51,7 @@ public class Menu {
 
         boolean seguir = true;
         Scanner scanner = new Scanner(System.in);
-        new ProcessBuilder("cmd", "/c","cls").inheritIO().start().waitFor();
+        new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
         System.out.println("Bienvenido a su billetera!");
         System.out.print(".");
         TimeUnit.SECONDS.sleep(1);
@@ -65,7 +65,7 @@ public class Menu {
             try {
                 // Aca muestro por pantalla el menu
                 //en windows esta linea limpia la consola
-                new ProcessBuilder("cmd", "/c","cls").inheritIO().start().waitFor();
+                new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
 
                 System.out.println("MENU");
 
@@ -88,7 +88,6 @@ public class Menu {
                 System.out.println("    9) Salir (La informacion ingresada sera borrada)");
 
 
-
                 System.out.print("Escriba un numero: ");
 
 
@@ -97,31 +96,31 @@ public class Menu {
 
                 switch (menu) {
                     case "1":
-                             Persona.verificarMayoriaEdadUsuario();
-                             Persona.crearUsuario();
+                        Persona.verificarMayoriaEdadUsuario();
+                        Persona.crearUsuario();
 
                         break;
 
 
                     case "2":
-                            Persona.iniciarSesion();
+                        Persona.iniciarSesion();
 
                         break;
 
 
                     case "3":
-                            Cuenta.verSaldo();
+                        Cuenta.verSaldo();
 
 
                         break;
                     case "4":
-                            Cuenta.menuDeTransaccion();
+                        Cuenta.menuDeTransaccion();
 
                         break;
 
 
                     case "5":
-
+                        Cuenta.verEstadoCuenta();
 
 
                         break;
@@ -137,13 +136,13 @@ public class Menu {
 
 
                         break;
-                     case "8":
+                    case "8":
 
-                         break;
+                        break;
 
 
                     case "9":
-                        new ProcessBuilder("cmd", "/c","cls").inheritIO().start().waitFor();
+                        new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
                         System.out.println("");
                         System.out.println("Muchas gracias por preferirnos");
                         System.out.print(".");
@@ -152,7 +151,7 @@ public class Menu {
                         TimeUnit.SECONDS.sleep(1);
                         System.out.print(".");
                         TimeUnit.SECONDS.sleep(1);
-                        new ProcessBuilder("cmd", "/c","cls").inheritIO().start().waitFor();
+                        new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
                         seguir = false;
                         break;
 
@@ -173,7 +172,7 @@ public class Menu {
     /*
     5)Metodos utilitarios o de logica
      */
-            }
         }
-
     }
+
+}

@@ -6,6 +6,7 @@ package cl.billetera.clases.usuario;
 
 import java.io.IOException;
 import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
 
 
 public  class Cuenta extends Persona  {
@@ -52,19 +53,53 @@ public static void verSaldo(){
    }
 
 }
-public void depositarORetirarDinero() throws IOException, InterruptedException {
+
+    public static void verEstadoCuenta() throws InterruptedException, IOException {
+    if(Persona.getSesionActiva()){
+        System.out.println("Sesion iniciada");
+
+        TimeUnit.SECONDS.sleep(2);
+
+         //limpiar consola y volver al menu
+         new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+
+         System.out.print("Volviendo al menu");
+         System.out.print(".");
+         TimeUnit.SECONDS.sleep(1);
+        System.out.print(".");
+        TimeUnit.SECONDS.sleep(1);
+        System.out.print(".");
+        TimeUnit.SECONDS.sleep(1);
+    }else{
+        System.out.println("Debe iniciar sesion para consultar esta informacion");
+    }
+    }
+
+    public void depositarORetirarDinero() throws IOException, InterruptedException {
     System.out.println("Quiere depositar o retirar dinero?");
     System.out.println("1)Depositar dinero");
     System.out.println("2)Retirar dinero");
     Scanner scanner = new Scanner(System.in);
     String respuesta = scanner.nextLine();
+        //limpiar consola
+        new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
     if(respuesta.equals("1")){
         depositarDinero();
     }else if(respuesta.equals("2")){
         retirarDinero();
     }else{
+        //limpiar consola y volver al menu
+        new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
         System.out.println("Respuesta incorrecta");
         System.out.println("Volviendo al menu principal");
+        System.out.print(".");
+        TimeUnit.SECONDS.sleep(1);
+        System.out.print(".");
+        TimeUnit.SECONDS.sleep(1);
+        System.out.print(".");
+        TimeUnit.SECONDS.sleep(1);
+        //limpiar consola y volver al menu
+        new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
     }
 
 
