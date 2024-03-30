@@ -15,5 +15,6 @@ public interface CambioDeDivisa {
 
     }
 
+    void cambio() throws IOException, InterruptedException;
 }
 

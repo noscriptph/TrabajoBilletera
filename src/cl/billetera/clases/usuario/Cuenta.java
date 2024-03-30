@@ -11,7 +11,7 @@ import java.util.concurrent.TimeUnit;
 
 public class Cuenta extends Persona {
 
-    private static long saldoEnLaCuenta = 0;
+    public static long saldoEnLaCuenta = 0;
 
 
     public Cuenta(long saldoEnLaCuenta, String nombreUsuario, String rutUsuario, String password, String correoElectronico, boolean sesionActiva, boolean isMayorEdad) {
