@@ -142,6 +142,9 @@ public class Persona {
     }
 
     public static void iniciarSesion() throws IOException, InterruptedException {
+
+
+
         new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
         Scanner scanner1 = new Scanner(System.in);
         String textoAComparar1;
