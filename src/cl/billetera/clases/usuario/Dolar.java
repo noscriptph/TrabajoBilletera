@@ -36,7 +36,7 @@ public class Dolar implements Conversor {
                         System.out.println("Pesos a Dolar");
                         System.out.println("Ingrese cantidad a convertir");
                         double peso = scanner.nextDouble();
-                        System.out.println("$"+ peso + " pesos son: " + peso * getDolar() + " dolares");
+                        System.out.println("$"+ peso + " pesos son: usd$" + peso / getDolar() + " dolares");
                         System.out.print("Volviendo al menu");
                         System.out.print(".");
                         TimeUnit.SECONDS.sleep(1);
@@ -46,6 +46,7 @@ public class Dolar implements Conversor {
                         TimeUnit.SECONDS.sleep(1);
                         //limpiar consola
                         new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+                        seguir=false;
 
                         break;
 
@@ -54,7 +55,7 @@ public class Dolar implements Conversor {
                         System.out.println("Dolar a pesos");
                         System.out.println("Ingrese cantidad a convertir");
                         double dolar = scanner.nextDouble();
-                        System.out.println("$" + dolar + " dolares son: $" + getDolar() / getDolar() + " pesos");
+                        System.out.println("$" + dolar + " dolares son: $" + getDolar() * getDolar() + " pesos");
                         System.out.print("Volviendo al menu");
                         System.out.print(".");
                         TimeUnit.SECONDS.sleep(1);
@@ -64,15 +65,14 @@ public class Dolar implements Conversor {
                         TimeUnit.SECONDS.sleep(1);
                         //limpiar consola
                         new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
-
+                        seguir=false;
 
                         break;
 
                     case "3":
                         //menu 3
                         System.out.println("Pesos en la cuenta a Dolar");
-
-                        System.out.println("$" + Cuenta.getSaldoEnLaCuenta() + " pesos son: " +getDolar()*Cuenta.getSaldoEnLaCuenta()+ " dolares");
+                        System.out.println("$" + Cuenta.getSaldoEnLaCuenta() + " pesos son: " +Cuenta.getSaldoEnLaCuenta()/getDolar()+ " dolares");
                         System.out.print("Volviendo al menu");
                         System.out.print(".");
                         TimeUnit.SECONDS.sleep(1);
@@ -82,7 +82,7 @@ public class Dolar implements Conversor {
                         TimeUnit.SECONDS.sleep(1);
                         //limpiar consola
                         new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
-
+                        seguir=false;
 
                         break;
 
@@ -98,14 +98,15 @@ public class Dolar implements Conversor {
                         //limpiar consola
                         new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
 
-
                         seguir = false;
                         break;
+
                     default:
                         //mensaje por defecto al detectar una excepcion
                         System.out.println("Accion invalida, intentelo denuevo");
-
+                        seguir=false;
                         break;
+
 
                 }
             } catch (Exception e) {

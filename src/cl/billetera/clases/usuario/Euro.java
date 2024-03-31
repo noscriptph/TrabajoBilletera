@@ -8,11 +8,12 @@ import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
 public class Euro implements Conversor {
-    public int euro = 910;
+    public double euro = 910;
 
-    public int getEuro() {
+    public double getEuro() {
         return euro;
     }
+
 
     /**
      *
@@ -46,7 +47,7 @@ public class Euro implements Conversor {
                         TimeUnit.SECONDS.sleep(1);
                         //limpiar consola
                         new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
-
+                        seguir=false;
                         break;
 
                     case "2":
@@ -65,14 +66,14 @@ public class Euro implements Conversor {
                         //limpiar consola
                         new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
 
-
+                        seguir=false;
                         break;
 
                     case "3":
                         //menu 3
                         System.out.println("Pesos en la cuenta a Euro");
 
-                        System.out.println("$" + Cuenta.getSaldoEnLaCuenta() + " pesos son: " +getEuro()*Cuenta.getSaldoEnLaCuenta()+ " euros");
+                        System.out.println("$" + Cuenta.getSaldoEnLaCuenta() + " pesos son: " +Cuenta.getSaldoEnLaCuenta()/getEuro()+ " euros");
                         System.out.print("Volviendo al menu");
                         System.out.print(".");
                         TimeUnit.SECONDS.sleep(1);
@@ -83,7 +84,7 @@ public class Euro implements Conversor {
                         //limpiar consola
                         new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
 
-
+                        seguir=false;
                         break;
 
                     case "4":

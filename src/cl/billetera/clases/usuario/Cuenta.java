@@ -23,45 +23,72 @@ public abstract class Cuenta extends Persona {
 
 
     public static long getSaldoEnLaCuenta() {
+
         return (long) saldoEnLaCuenta;
     }
 
-    public static void setSaldoEnLaCuenta(long saldoEnLaCuenta) {
 
+
+    public static void setSaldoEnLaCuenta(double saldoEnLaCuenta) {
+        Cuenta.saldoEnLaCuenta = saldoEnLaCuenta;
     }
 
-
-    public static void verSaldo() {
-        if (Persona.getSesionActiva()) {
+    public static void verSaldo() throws IOException, InterruptedException {
+        boolean condicion;
+        condicion=isSesionActiva();
+        if (condicion) {
             System.out.println("El saldo en la cuenta es: $" + getSaldoEnLaCuenta());
+            System.out.print(".");
+            TimeUnit.SECONDS.sleep(1);
+            System.out.print(".");
+            TimeUnit.SECONDS.sleep(1);
+            System.out.print(".");
+            TimeUnit.SECONDS.sleep(1);
+            //en windows esta linea limpia la consola
+            new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
         } else {
             System.out.println("Debe iniciar sesion para consultar esta informacion");
+            System.out.print(".");
+            TimeUnit.SECONDS.sleep(1);
+            System.out.print(".");
+            TimeUnit.SECONDS.sleep(1);
+            System.out.print(".");
+            TimeUnit.SECONDS.sleep(1);
+            //en windows esta linea limpia la consola
+            new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+
         }
 
     }
 
     public static void verEstadoCuenta() throws InterruptedException, IOException {
-        if (Persona.getSesionActiva()) {
+        if (Persona.isSesionActiva()) {
             System.out.println("Sesion iniciada");
+            System.out.println("-$"+getSaldoEnLaCuenta()+" pesos");
+            System.out.println("-usuario id=" + getIdUsuario());
+            System.out.println("-Nombre de usuario es=" + getNombreUsuario());
+            System.out.println("-Rut de usuario es=" + getRutUsuario());
+            System.out.println("-Correo electronico es=" + getCorreoElectronico());
 
             TimeUnit.SECONDS.sleep(2);
 
-            //limpiar consola
-            new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
 
-            System.out.print("Volviendo al menu");
-            System.out.print(".");
-            TimeUnit.SECONDS.sleep(1);
-            System.out.print(".");
-            TimeUnit.SECONDS.sleep(1);
-            System.out.print(".");
-            TimeUnit.SECONDS.sleep(1);
         } else {
             System.out.println("Debe iniciar sesion para consultar esta informacion");
         }
+        //limpiar consola
+        new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+
+        System.out.print("Volviendo al menu");
+        System.out.print(".");
+        TimeUnit.SECONDS.sleep(1);
+        System.out.print(".");
+        TimeUnit.SECONDS.sleep(1);
+        System.out.print(".");
+        TimeUnit.SECONDS.sleep(1);
     }
 
-    public static void menuDeTransaccion() {
+    public static void menuDeTransaccion() throws InterruptedException {
         System.out.println("Indique que desea hacer");
         System.out.println("1)Retirar dinero");
         System.out.println("2)Depositar dinero");
@@ -69,12 +96,18 @@ public abstract class Cuenta extends Persona {
         String respuesta = scanner.nextLine();
         if (respuesta.equals("1")) {
             retirarDinero();
-            System.out.println("Retirado");
+
 
         } else if (respuesta.equals("2")) {
             depositarDinero();
-            System.out.println("Depositado");
+
         }
+        System.out.print(".");
+        TimeUnit.SECONDS.sleep(1);
+        System.out.print(".");
+        TimeUnit.SECONDS.sleep(1);
+        System.out.print(".");
+        TimeUnit.SECONDS.sleep(1);
     }
 
     private static void retirarDinero() {
@@ -92,38 +125,5 @@ public abstract class Cuenta extends Persona {
         System.out.println("Depositando $" + depositar + " en la cuenta");
         setSaldoEnLaCuenta(getSaldoEnLaCuenta() + depositar);
 
-
     }
-
-    public void depositarORetirarDinero() throws IOException, InterruptedException {
-        System.out.println("Quiere depositar o retirar dinero?");
-        System.out.println("1)Depositar dinero");
-        System.out.println("2)Retirar dinero");
-        Scanner scanner = new Scanner(System.in);
-        String respuesta = scanner.nextLine();
-        //limpiar consola
-        new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
-        if (respuesta.equals("1")) {
-            depositarDinero();
-        } else if (respuesta.equals("2")) {
-            retirarDinero();
-        } else {
-            //limpiar consola y volver al menu
-            new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
-            System.out.println("Respuesta incorrecta");
-            System.out.println("Volviendo al menu principal");
-            System.out.print(".");
-            TimeUnit.SECONDS.sleep(1);
-            System.out.print(".");
-            TimeUnit.SECONDS.sleep(1);
-            System.out.print(".");
-            TimeUnit.SECONDS.sleep(1);
-            //limpiar consola y volver al menu
-            new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
-        }
-
-
-    }
-
-
 }

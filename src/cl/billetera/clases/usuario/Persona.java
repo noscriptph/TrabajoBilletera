@@ -21,7 +21,7 @@ public class Persona {
     private static Random idUsuario;
     private static String correoElectronico;
     private static boolean isMayorEdad;
-    private boolean sesionActiva = false;
+    protected static boolean sesionActiva = false;
 
      /*
     2)Constructor
@@ -38,9 +38,6 @@ public class Persona {
         this.correoElectronico = correoElectronico;
         this.sesionActiva = sesionActiva;
     }
-    /*
-    3)Metodos de acceso
-     */
 
     public static String getNombreUsuario() {
         return nombreUsuario;
@@ -58,14 +55,6 @@ public class Persona {
         Persona.rutUsuario = rutUsuario;
     }
 
-    public static Random getIdUsuario() {
-        return idUsuario;
-    }
-
-    public static void setIdUsuario(Random idUsuario) {
-        Persona.idUsuario = idUsuario;
-    }
-
     public static String getPassword() {
         return password;
     }
@@ -74,14 +63,37 @@ public class Persona {
         Persona.password = password;
     }
 
+    public static Random getIdUsuario() {
+        return idUsuario;
+    }
+
+    public static void setIdUsuario(Random idUsuario) {
+        Persona.idUsuario = idUsuario;
+    }
+
     public static String getCorreoElectronico() {
         return correoElectronico;
     }
 
     public static void setCorreoElectronico(String correoElectronico) {
-
+        Persona.correoElectronico = correoElectronico;
     }
 
+    public static boolean isIsMayorEdad() {
+        return isMayorEdad;
+    }
+
+    public static void setIsMayorEdad(boolean isMayorEdad) {
+        Persona.isMayorEdad = isMayorEdad;
+    }
+
+    public static boolean isSesionActiva() {
+        return sesionActiva;
+    }
+
+    public void setSesionActiva() {
+        this.sesionActiva = sesionActiva;
+    }
 
     /**
      * Permite crear un usuario con sus correspondientes datos personales y
@@ -97,7 +109,7 @@ public class Persona {
             Scanner scanner = new Scanner(System.in);
 
             setNombreUsuario(scanner.next());
-            System.out.println("Ingrese el rut del usuario sin pintos y con guion");
+            System.out.println("Ingrese el rut del usuario sin puntos y con guion");
             System.out.println("    ejemplo:  19000123-0");
             scanner.nextLine();
             setRutUsuario(scanner.nextLine());
@@ -142,13 +154,13 @@ public class Persona {
         System.out.println("Ingrese su contraseña");
         Scanner scanner2 = new Scanner(System.in);
         textoAComparar2 = scanner2.nextLine();
-correo=getCorreoElectronico();
-contrasenia=getPassword();
+        correo=getCorreoElectronico();
+        contrasenia=getPassword();
 
         if ((textoAComparar1.equals(correo))&&(textoAComparar2.equals(contrasenia))) {
 
                System.out.println("Sesion iniciada correctamente");
-               setSesionActiva(true);
+               sesionActiva=true;
                //limpiar consola y volver al menu
                new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
 
@@ -197,7 +209,7 @@ contrasenia=getPassword();
         return false;
     }
 
-    public static boolean verificarMayoriaEdadUsuario() {
+    public static boolean verificarMayoriaEdadUsuario() throws IOException, InterruptedException {
         System.out.println("Ingrese su edad");
         Scanner scanner = new Scanner(System.in);
         int edadusuarioIngresada = Integer.parseInt(scanner.nextLine());
@@ -207,18 +219,13 @@ contrasenia=getPassword();
         } else {
            isMayorEdad = false;
         }
-
+//en windows esta linea limpia la consola
+        new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
         return isMayorEdad;
     }
 
 
-    public boolean isSesionActiva() {
-        return sesionActiva;
-    }
 
-    public static void setSesionActiva(boolean sesionActiva) {
-
-    }
 
 
     public static boolean verificarMayoriaEdadUsuario(int edadusuarioIngresada) {
