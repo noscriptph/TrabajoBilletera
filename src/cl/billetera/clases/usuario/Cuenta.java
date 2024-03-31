@@ -4,14 +4,16 @@
 
 package cl.billetera.clases.usuario;
 
+import com.sun.jdi.InternalException;
+
 import java.io.IOException;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
 
-public class Cuenta extends Persona {
+public abstract class Cuenta extends Persona {
 
-    public static long saldoEnLaCuenta = 0;
+    public static double saldoEnLaCuenta = 0;
 
 
     public Cuenta(long saldoEnLaCuenta, String nombreUsuario, String rutUsuario, String password, String correoElectronico, boolean sesionActiva, boolean isMayorEdad) {
@@ -19,9 +21,13 @@ public class Cuenta extends Persona {
         this.saldoEnLaCuenta = saldoEnLaCuenta;
     }
 
+    public Cuenta() {
+
+    }
+
 
     public static long getSaldoEnLaCuenta() {
-        return saldoEnLaCuenta;
+        return (long) saldoEnLaCuenta;
     }
 
     public static void setSaldoEnLaCuenta(long saldoEnLaCuenta) {
@@ -84,7 +90,7 @@ public class Cuenta extends Persona {
     }
 
     private static void depositarDinero() {
-        System.out.println("Cuanto desea depositar dinero?");
+        System.out.println("Cuanto desea depositar?");
         Scanner scanner = new Scanner(System.in);
         long depositar = scanner.nextLong();
         System.out.println("Depositando $" + depositar + " en la cuenta");
@@ -124,4 +130,9 @@ public class Cuenta extends Persona {
     }
 
 
+    public static double cambio() {
+        return 0;
+    }
+
+    public abstract void cambio(double saldoEnLaCuenta) throws IOException, InternalException, InterruptedException;
 }

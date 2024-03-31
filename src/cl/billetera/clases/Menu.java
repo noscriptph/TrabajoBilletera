@@ -1,8 +1,6 @@
 package cl.billetera.clases;
 
-import cl.billetera.clases.usuario.CambioDeDivisa;
-import cl.billetera.clases.usuario.Persona;
-import cl.billetera.clases.usuario.Cuenta;
+import cl.billetera.clases.usuario.*;
 import com.sun.jdi.InternalException;
 
 
@@ -109,7 +107,53 @@ public class Menu {
 
 
                     case "6":
-                        CambioDeDivisa.conversorMoneda();
+                        boolean seguir2=true;
+                        Scanner scanner2 = new Scanner(System.in);
+                        while (seguir2) {
+                            try {
+                                System.out.println("Que tipo de conversion desea realizar");
+                                System.out.println("1) Dolar a peso");
+                                System.out.println("2) Euro a peso");
+                                System.out.println("3) volver al menu principal");
+
+                                String menu2 = scanner2.next();
+
+
+                                switch (menu2) {
+                                    case "1":
+                                        //menu 1
+                                        CambioDeDivisa.cambio(CuentaEnDolar.cambio());
+
+                                        break;
+
+                                    case "2":
+                                        //menu 2
+                                        CambioDeDivisa.cambio(CuentaEnEuro.cambio());
+                                        break;
+
+
+
+                                    case "3":
+                                        //volver al menu principal
+                                        seguir2=false;
+
+                                        System.out.println("Volviendo al menu");
+                                        System.out.print(".");
+                                        TimeUnit.SECONDS.sleep(1);
+                                        System.out.print(".");
+                                        TimeUnit.SECONDS.sleep(1);
+                                        System.out.print(".");
+                                        TimeUnit.SECONDS.sleep(1);
+                                        new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+
+                                        break;
+
+
+                                }
+                            } catch (Exception e) {
+                                throw new RuntimeException(e);
+                            }
+                        }
 
                         break;
 
