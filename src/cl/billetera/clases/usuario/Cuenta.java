@@ -21,10 +21,6 @@ public abstract class Cuenta extends Persona {
         this.saldoEnLaCuenta = saldoEnLaCuenta;
     }
 
-    public Cuenta() {
-
-    }
-
 
     public static long getSaldoEnLaCuenta() {
         return (long) saldoEnLaCuenta;
@@ -50,7 +46,7 @@ public abstract class Cuenta extends Persona {
 
             TimeUnit.SECONDS.sleep(2);
 
-            //limpiar consola y volver al menu
+            //limpiar consola
             new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
 
             System.out.print("Volviendo al menu");
@@ -130,9 +126,4 @@ public abstract class Cuenta extends Persona {
     }
 
 
-    public static double cambio() {
-        return 0;
-    }
-
-    public abstract void cambio(double saldoEnLaCuenta) throws IOException, InternalException, InterruptedException;
 }

@@ -14,11 +14,6 @@ import java.util.concurrent.TimeUnit;
  * variables en otras clases
  */
 public class Persona {
-    /*
-    1)Atributos de una clase
-    modificadores de acceso, son parte de los polimorfismos
-    public, private, protected y son palabras reservadas
-    */
 
     protected static String nombreUsuario;
     protected static String rutUsuario;
@@ -136,21 +131,22 @@ public class Persona {
 
     public static void iniciarSesion() throws IOException, InterruptedException {
         new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
-
-        String textoAComparar1;
-        String textoAComparar2;
-        System.out.println("Ingrese su correo");
         Scanner scanner1 = new Scanner(System.in);
+        String textoAComparar1;
+        String correo;
+        String textoAComparar2;
+        String contrasenia;
+        System.out.println("Ingrese su correo");
         textoAComparar1 = scanner1.nextLine();
-
 
         System.out.println("Ingrese su contraseña");
         Scanner scanner2 = new Scanner(System.in);
         textoAComparar2 = scanner2.nextLine();
+correo=getCorreoElectronico();
+contrasenia=getPassword();
 
+        if ((textoAComparar1.equals(correo))&&(textoAComparar2.equals(contrasenia))) {
 
-        if ((textoAComparar1.equals(getCorreoElectronico()))) {
-           if(textoAComparar2.equals(getPassword())) {
                System.out.println("Sesion iniciada correctamente");
                setSesionActiva(true);
                //limpiar consola y volver al menu
@@ -163,7 +159,7 @@ public class Persona {
                TimeUnit.SECONDS.sleep(1);
                System.out.print(".");
                TimeUnit.SECONDS.sleep(1);
-           }
+
 
         } else {
             System.out.println("Usuario o contraseña incorrectos");
@@ -189,6 +185,14 @@ public class Persona {
 
     }
 
+    private static String password() {
+        return null;
+    }
+
+    private static String correoElectronico() {
+        return null;
+    }
+
     protected static boolean getSesionActiva() {
         return false;
     }
@@ -206,9 +210,7 @@ public class Persona {
 
         return isMayorEdad;
     }
-    /*
-    4)Metodos de comportamiento
-     */
+
 
     public boolean isSesionActiva() {
         return sesionActiva;
@@ -218,9 +220,7 @@ public class Persona {
 
     }
 
-    /*
-5)Metodos utilitarios o de logica
- */
+
     public static boolean verificarMayoriaEdadUsuario(int edadusuarioIngresada) {
 
         return false;

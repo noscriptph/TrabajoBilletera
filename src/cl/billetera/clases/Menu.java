@@ -40,6 +40,10 @@ public class Menu {
         System.out.print(".");
         TimeUnit.SECONDS.sleep(1);
 
+        //ambas necesarias para realizar el llamado en la opcion 6 y 7 del menu
+        Dolar dolar = new Dolar();
+        Euro euro = new Euro();
+
 
         while (seguir) {
             try {
@@ -59,11 +63,11 @@ public class Menu {
 
                 System.out.println("    5) Ver estado de Cuenta");
 
-                System.out.println("    6) Realizar conversion de dinero");
+                System.out.println("    6) Conversion dolar a peso");
 
-                System.out.println("    7) Ver valores de conversion");
+                System.out.println("    7) Conversion euro a peso");
 
-                System.out.println("    8) ");
+                System.out.println("    8) Ver valores de conversion");
 
                 System.out.println("    9) Salir (La informacion ingresada sera borrada)");
 
@@ -81,88 +85,39 @@ public class Menu {
 
                         break;
 
-
                     case "2":
                         Persona.iniciarSesion();
 
                         break;
 
-
                     case "3":
                         Cuenta.verSaldo();
 
-
                         break;
+
                     case "4":
                         Cuenta.menuDeTransaccion();
 
                         break;
 
-
                     case "5":
                         Cuenta.verEstadoCuenta();
 
-
                         break;
-
 
                     case "6":
-                        boolean seguir2=true;
-                        Scanner scanner2 = new Scanner(System.in);
-                        while (seguir2) {
-                            try {
-                                System.out.println("Que tipo de conversion desea realizar");
-                                System.out.println("1) Dolar a peso");
-                                System.out.println("2) Euro a peso");
-                                System.out.println("3) volver al menu principal");
-
-                                String menu2 = scanner2.next();
-
-
-                                switch (menu2) {
-                                    case "1":
-                                        //menu 1
-                                        CambioDeDivisa.cambio(CuentaEnDolar.cambio());
-
-                                        break;
-
-                                    case "2":
-                                        //menu 2
-                                        CambioDeDivisa.cambio(CuentaEnEuro.cambio());
-                                        break;
-
-
-
-                                    case "3":
-                                        //volver al menu principal
-                                        seguir2=false;
-
-                                        System.out.println("Volviendo al menu");
-                                        System.out.print(".");
-                                        TimeUnit.SECONDS.sleep(1);
-                                        System.out.print(".");
-                                        TimeUnit.SECONDS.sleep(1);
-                                        System.out.print(".");
-                                        TimeUnit.SECONDS.sleep(1);
-                                        new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
-
-                                        break;
-
-
-                                }
-                            } catch (Exception e) {
-                                throw new RuntimeException(e);
-                            }
-                        }
+                        dolar.convertir();
 
                         break;
 
-
                     case "7":
-
+                        euro.convertir();
 
                         break;
                     case "8":
+                        System.out.println("Valores de conversion");
+                        System.out.println("El dolar se paga a $"+ dolar.getDolar()+ "pesos");
+                        System.out.println("El euro se paga a $" + euro.getEuro() + "pesos");
 
                         break;
 
