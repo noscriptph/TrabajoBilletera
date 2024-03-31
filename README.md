@@ -1,12 +1,12 @@
 
 # Billetera Virtual
 
-Proyecto basado en proyecto asignado en bootcamp en la estapa de java.
+Proyecto basado en tarea asignada en bootcamp en la estapa de java.
 
 
 
 ## Objetivo
-El objetivo de nuestro proyecto "Alke Wallet" es desarrollar una billetera
+El objetivo de nuestro proyecto **Alke Wallet** es desarrollar una billetera
 digital que permita a los usuarios gestionar sus activos financieros de
 manera segura y conveniente.
 Nuestro objetivo es entregar una aplicación funcional, segura y fácil de
@@ -14,22 +14,23 @@ usar que proporcione a los usuarios una solución confiable para
 administrar sus activos financieros de manera digital.
 
 ## Requerimientos generales
--Administración de fondos: El programa debe permitir crear una cuenta, ver su saldo disponible, realizar ingreso y retiro de dinero (debe impactar sobre el saldo actual).
+—Administración de fondos: El programa debe permitir crear una cuenta, ver su saldo disponible, realizar ingreso y 
+retiro de dinero (debe impactar sobre el saldo actual).
 
--Conversión de moneda: El programa debe permitir convertir el saldo de un tipo de moneda a otra.
-## Aspectos tecnicos
--Legibilidad del código: Se evaluará la claridad y organización del código desarrollado, asegurando buenas prácticas de programación y facilidad de mantenimiento.
+—Conversión de moneda: El programa debe permitir convertir el saldo de un tipo de moneda a otra.
+## Aspectos técnicos
+—Legibilidad del código: Se evaluará la claridad y organización del código desarrollado, asegurando buenas prácticas de programación y facilidad de mantenimiento.
 
--Documentación: Se verificará que el proyecto esté
+—Documentación: Se verificará que el proyecto esté
 correctamente documentado, incluyendo comentarios en el código, explicaciones de funcionalidades y documentación técnica adicional según sea necesario
 ## Aspectos estructurales
--Cumplimiento de los requerimientos: Se evaluará si todas las funcionalidades requeridas han sido implementadas de acuerdo con los requisitos establecidos.
+—Cumplimiento de los requerimientos: Se evaluará si todas las funcionalidades requeridas han sido implementadas de acuerdo con los requisitos establecidos.
 
--Calidad del proyecto: Se analizará la calidad del código, la estructura de la base de datos, la seguridad implementada y otros aspectos técnicos para garantizar un proyecto robusto y
+—Calidad del proyecto: Se analizará la calidad del código, la estructura de la base de datos, la seguridad implementada y otros aspectos técnicos para garantizar un proyecto robusto y
 confiable.
 ## Entregables ✅
 
-Al finalizar el proyecto "Alke Wallet", se espera que el equipo de desarrollo
+Al finalizar el proyecto **Alke Wallet**, se espera que el equipo de desarrollo
 entregue los siguientes elementos como evidencia concreta del trabajo
 realizado:
 
@@ -61,8 +62,10 @@ aspectos más relevantes del proyecto.
 ## MENU Y SALIDA
 ![menu](https://github.com/noscriptph/TrabajoBilletera/assets/103396791/9bf83b50-03b2-40a3-a9b9-cd13e4cbbccb)
 
-Se diseño el menu de entrada y salida de tal forma que el usuario sienta que la aplicacion esta mas viva y le recuerde a cualquier aplicacion del diario vivir que corre en terminal(esto tomando de referencia aplicaciones ejecutadas en linux, windows como parches, actualizaciones, navegacion por carpetas, etc).
-Ademas el uso debe ser intuitivo y que independiente de lo ingresado por el usuario no existan problemas de cuelgues o errores en pantalla, solo alertas lo mas simple y amigables posibles asi evitar frustracion por parte del usuario.
+Se diseñó el menu de entrada y salida de tal forma que el usuario sienta que la aplicacion está más viva y le recuerde
+a cualquier aplicacion del diario vivir que corre en terminal(esto tomando de referencia aplicaciones ejecutadas en linux, windows como parches, actualizaciones, navegacion por carpetas, etc).
+Además el uso debe ser intuitivo y que independiente de lo ingresado por el usuario no existan problemas de cuelgues 
+o errores en pantalla, solo alertas lo más simple y amigables posibles así evitar frustracion por parte del usuario.
 
 ##MAIN
 ![main](https://github.com/noscriptph/TrabajoBilletera/assets/103396791/66f9b259-fe9e-4d86-822d-d63a3a1c6435)
@@ -72,7 +75,15 @@ prepararme a aprender kotlin y usar Android Studio
 
 <img alt="butter robot" height="300" src="https://github.com/noscriptph/TrabajoBilletera/assets/103396791/191af339-c7fb-406e-bf20-e8cb37ab56b5" width="250"/>
 
+## PROBLEMAS ENCONTRADOS Y SOLUCIONADOS
+
+Se empezó de cero la escritura de la función de cambio de moneda ya que uno de los problemas encontrados fueron la inconsistencia en el codigo.
+
+Otro problema encontrado fue hacer el llamado de un getter de tipo bolean de forma getBoolean, pero se debia realizar asi isBoolean, cambiando esto fue posible solucionar un problema con los inicios de sesion y la comprobacion de que la sesion estaba iniciada.
+
+
 ## REFERENCIAS
+
 Youtube [INTERFACE](https://www.youtube.com/watch?v=9fkpLb6rSY8)
 VideosClases alkemi
 

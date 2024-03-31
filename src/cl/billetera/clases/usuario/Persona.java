@@ -210,6 +210,8 @@ public class Persona {
     }
 
     public static boolean verificarMayoriaEdadUsuario() throws IOException, InterruptedException {
+        //en windows esta linea limpia la consola
+        new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
         System.out.println("Ingrese su edad");
         Scanner scanner = new Scanner(System.in);
         int edadusuarioIngresada = Integer.parseInt(scanner.nextLine());
@@ -218,6 +220,14 @@ public class Persona {
             isMayorEdad = true;
         } else {
            isMayorEdad = false;
+            System.out.println("Edad no valida para utilizar esta aplicacion ");
+            System.out.print("Volviendo al menu");
+            System.out.print(".");
+            TimeUnit.SECONDS.sleep(1);
+            System.out.print(".");
+            TimeUnit.SECONDS.sleep(1);
+            System.out.print(".");
+            TimeUnit.SECONDS.sleep(1);
         }
 //en windows esta linea limpia la consola
         new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();

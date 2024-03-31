@@ -63,6 +63,7 @@ public abstract class Cuenta extends Persona {
 
     public static void verEstadoCuenta() throws InterruptedException, IOException {
         if (Persona.isSesionActiva()) {
+            System.out.println("Informacion visible por 10 segundos");
             System.out.println("Sesion iniciada");
             System.out.println("-$"+getSaldoEnLaCuenta()+" pesos");
             System.out.println("-usuario id=" + getIdUsuario());
@@ -70,7 +71,7 @@ public abstract class Cuenta extends Persona {
             System.out.println("-Rut de usuario es=" + getRutUsuario());
             System.out.println("-Correo electronico es=" + getCorreoElectronico());
 
-            TimeUnit.SECONDS.sleep(2);
+            TimeUnit.SECONDS.sleep(10);
 
 
         } else {
@@ -88,17 +89,23 @@ public abstract class Cuenta extends Persona {
         TimeUnit.SECONDS.sleep(1);
     }
 
-    public static void menuDeTransaccion() throws InterruptedException {
+    public static void menuDeTransaccion() throws InterruptedException, IOException {
+        new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+
         System.out.println("Indique que desea hacer");
         System.out.println("1)Retirar dinero");
         System.out.println("2)Depositar dinero");
         Scanner scanner = new Scanner(System.in);
         String respuesta = scanner.nextLine();
         if (respuesta.equals("1")) {
+            new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+
             retirarDinero();
 
 
         } else if (respuesta.equals("2")) {
+            new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+
             depositarDinero();
 
         }
