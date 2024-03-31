@@ -34,6 +34,9 @@ public abstract class Cuenta extends Persona {
     }
 
     public static void verSaldo() throws IOException, InterruptedException {
+        new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+
+
         boolean condicion;
         condicion=isSesionActiva();
         if (condicion) {
