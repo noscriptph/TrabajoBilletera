@@ -60,7 +60,8 @@ soluciones implementadas y los logros obtenidos. Esta presentación
 debe ser clara, concisa y orientada a la audiencia, destacando los
 aspectos más relevantes del proyecto.
 ## MENU Y SALIDA
-![menu](https://github.com/noscriptph/TrabajoBilletera/assets/103396791/9bf83b50-03b2-40a3-a9b9-cd13e4cbbccb)
+
+<img alt="menu" height="400" src="https://github.com/noscriptph/TrabajoBilletera/assets/103396791/9bf83b50-03b2-40a3-a9b9-cd13e4cbbccb" width="600"/>
 
 Se diseñó el menu de entrada y salida de tal forma que el usuario sienta que la aplicacion está más viva y le recuerde
 a cualquier aplicacion del diario vivir que corre en terminal(esto tomando de referencia aplicaciones ejecutadas en linux, windows como parches, actualizaciones, navegacion por carpetas, etc).
@@ -68,12 +69,12 @@ Además el uso debe ser intuitivo y que independiente de lo ingresado por el usu
 o errores en pantalla, solo alertas lo más simple y amigables posibles así evitar frustracion por parte del usuario.
 
 ##MAIN
-![main](https://github.com/noscriptph/TrabajoBilletera/assets/103396791/66f9b259-fe9e-4d86-822d-d63a3a1c6435)
+<img alt="main" height="400" src="https://github.com/noscriptph/TrabajoBilletera/assets/103396791/66f9b259-fe9e-4d86-822d-d63a3a1c6435" width="600"/>
 
 el unico trabajo de main.java es hacer un llamado a menú.menuAplicacion(). Esto para mantener una buena costumbre de evitar sobrecargar el main con codigo innecesario y
 prepararme a aprender kotlin y usar Android Studio
 
-<img alt="butter robot" height="300" src="https://github.com/noscriptph/TrabajoBilletera/assets/103396791/191af339-c7fb-406e-bf20-e8cb37ab56b5" width="250"/>
+<img alt="butter robot" height="400" src="https://github.com/noscriptph/TrabajoBilletera/assets/103396791/191af339-c7fb-406e-bf20-e8cb37ab56b5" width="300"/>
 
 ## PROBLEMAS ENCONTRADOS Y SOLUCIONADOS
 
@@ -86,16 +87,17 @@ Destinado a ser una ayuda visual de lo que contiene el codigo y como esta popula
 programadores puedan saber donde encontrar las clases y que metodos contienen, esto permite ahorrar tiempo y evita la necesidad de busear dentro del codigo en caso
 de tener algun requerimiento muy especifico
 
-![diagrama uml](https://github.com/noscriptph/TrabajoBilletera/assets/103396791/536d9206-0548-49ef-b8df-573383a7df67)
+<img alt="diagrama uml" height="300" src="https://github.com/noscriptph/TrabajoBilletera/assets/103396791/536d9206-0548-49ef-b8df-573383a7df67" width="600"/>
 
 
 ## EJECUCION CON BASH
 Analizando la practicidad del codigo se decidio investigar como ejecutar con un doble click el artifact generado por el ide, ya que asi se puede confirmar
 el funcionamiento de los comandos de consola compatibles con windows, estos comando realizan una limpieza del stream de caracteres entregados por la
 aplicacion java, lo que mantiene limpia la interfaz y en caso de existir datos sensibles estos no podran ser vistos en el historial.
-![ejecutar desde archivo bash el artifact](https://github.com/noscriptph/TrabajoBilletera/assets/103396791/66909744-4cea-40af-a12b-5bfbf103cb63)
+<img alt="ejecutar desde archivo bash el artifact" height="290" src="https://github.com/noscriptph/TrabajoBilletera/assets/103396791/66909744-4cea-40af-a12b-5bfbf103cb63" width="600"/>
 
-![referencia a la ejecucion desde bash](https://github.com/noscriptph/TrabajoBilletera/assets/103396791/abc8d1a8-3540-403f-9c1b-a30eabbe4595)
+<img alt="referencia a la ejecucion desde bash" height="500" src="https://github.com/noscriptph/TrabajoBilletera/assets/103396791/abc8d1a8-3540-403f-9c1b-a30eabbe4595" width="600"/>
+
 Esto me sirvio para hacer pruebas sin emular el terminal o consola
 
 ## REFERENCIAS
@@ -104,6 +106,7 @@ Esto me sirvio para hacer pruebas sin emular el terminal o consola
 
 -VideosClases alkemi
 
+-Todas las Imagenes se encuentran dentro de la carpeta Media
 
 
 
