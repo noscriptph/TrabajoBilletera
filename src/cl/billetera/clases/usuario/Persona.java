@@ -14,18 +14,15 @@ import java.util.concurrent.TimeUnit;
  * variables en otras clases
  */
 public class Persona {
-
+    //declaracion de variables utilizadas por la clase persona
     protected static String nombreUsuario;
     protected static String rutUsuario;
     protected static String password;
-    private static Random idUsuario;
+    private static String idUsuario;
     private static String correoElectronico;
     private static boolean isMayorEdad;
     protected static boolean sesionActiva = false;
 
-     /*
-    2)Constructor
-     */
 
     /**
      * Obliga que al crear una persona se deban ingresar todos sus datos
@@ -39,46 +36,75 @@ public class Persona {
         this.sesionActiva = sesionActiva;
     }
 
+    /**
+     * accede al nombre del usuario
+     */
     public static String getNombreUsuario() {
         return nombreUsuario;
     }
 
+    /**
+     * @param nombreUsuario se usa al momento de crear un usuario
+     *                      para almacenar el nombre del usuario
+     */
     public static void setNombreUsuario(String nombreUsuario) {
         Persona.nombreUsuario = nombreUsuario;
     }
 
+    /**
+     * @return se usa para acceder al rut del usuario
+     */
     public static String getRutUsuario() {
         return rutUsuario;
     }
 
+    /**
+     * @param rutUsuario se usa al momento de crear un usuario
+     *                   para almacenar el rut del usuario
+     */
     public static void setRutUsuario(String rutUsuario) {
         Persona.rutUsuario = rutUsuario;
     }
 
+    /**
+     * @return se usa para confirmar la contraseña del usuario, es importante jamas
+     * mostrarla ya que seria un problema de seguridad
+     */
     public static String getPassword() {
         return password;
     }
 
+    /**
+     * @param password utilizado para crear la contraseña del usuario
+     */
     public static void setPassword(String password) {
         Persona.password = password;
     }
 
-    public static Random getIdUsuario() {
-        return idUsuario;
+    /**
+     * @return se usa para crear un id de usuario aleatorio
+     */
+    public static void setIdUsuario(String idUsuario) {
+        Persona.idUsuario = idUsuario.toString();
     }
 
-    public static void setIdUsuario(Random idUsuario) {
-        Persona.idUsuario = idUsuario;
-    }
-
+    /**
+     * @return permite acceder al correo electronico del usuario
+     */
     public static String getCorreoElectronico() {
         return correoElectronico;
     }
 
+    /**
+     * @param correoElectronico permite asignar el correo electronico del usuario
+     */
     public static void setCorreoElectronico(String correoElectronico) {
         Persona.correoElectronico = correoElectronico;
     }
 
+    /**
+     * @return reservado en caso que mas adelante se requiera mostrar la edad del usuario o asignarla
+     */
     public static boolean isIsMayorEdad() {
         return isMayorEdad;
     }
@@ -87,10 +113,16 @@ public class Persona {
         Persona.isMayorEdad = isMayorEdad;
     }
 
+    /**
+     * utilizado para leer el estado de la sesion del usuario
+     */
     public static boolean isSesionActiva() {
         return sesionActiva;
     }
 
+    /**
+     * utilizado para asiganar el estado de la sesion del usuario
+     */
     public void setSesionActiva() {
         this.sesionActiva = sesionActiva;
     }
@@ -99,7 +131,6 @@ public class Persona {
      * Permite crear un usuario con sus correspondientes datos personales y
      * generar un id.
      */
-
     public static void crearUsuario() throws IOException, InterruptedException {
         new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
         if (isMayorEdad) {
@@ -113,7 +144,7 @@ public class Persona {
             System.out.println("    ejemplo:  19000123-0");
             scanner.nextLine();
             setRutUsuario(scanner.nextLine());
-            setIdUsuario(new Random());
+            setIdUsuario(String.valueOf(new Random()));
             System.out.println("Ingrese su Email:");
             setCorreoElectronico(scanner.nextLine());
 
@@ -141,9 +172,10 @@ public class Persona {
 
     }
 
+    /**
+     * se utliza para iniciar la sesion del usuario
+     */
     public static void iniciarSesion() throws IOException, InterruptedException {
-
-
 
         new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
         Scanner scanner1 = new Scanner(System.in);
@@ -157,23 +189,23 @@ public class Persona {
         System.out.println("Ingrese su contraseña");
         Scanner scanner2 = new Scanner(System.in);
         textoAComparar2 = scanner2.nextLine();
-        correo=getCorreoElectronico();
-        contrasenia=getPassword();
+        correo = getCorreoElectronico();
+        contrasenia = getPassword();
 
-        if ((textoAComparar1.equals(correo))&&(textoAComparar2.equals(contrasenia))) {
+        if ((textoAComparar1.equals(correo)) && (textoAComparar2.equals(contrasenia))) {
 
-               System.out.println("Sesion iniciada correctamente");
-               sesionActiva=true;
-               //limpiar consola y volver al menu
-               new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+            System.out.println("Sesion iniciada correctamente");
+            sesionActiva = true;
+            //limpiar consola y volver al menu
+            new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
 
-               System.out.print("Volviendo al menu");
-               System.out.print(".");
-               TimeUnit.SECONDS.sleep(1);
-               System.out.print(".");
-               TimeUnit.SECONDS.sleep(1);
-               System.out.print(".");
-               TimeUnit.SECONDS.sleep(1);
+            System.out.print("Volviendo al menu");
+            System.out.print(".");
+            TimeUnit.SECONDS.sleep(1);
+            System.out.print(".");
+            TimeUnit.SECONDS.sleep(1);
+            System.out.print(".");
+            TimeUnit.SECONDS.sleep(1);
 
 
         } else {
@@ -212,6 +244,9 @@ public class Persona {
         return false;
     }
 
+    /**
+     * @return realiza una comprobacion de la edad del usuario
+     */
     public static boolean verificarMayoriaEdadUsuario() throws IOException, InterruptedException {
         //en windows esta linea limpia la consola
         new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
@@ -222,7 +257,7 @@ public class Persona {
         if ((edadusuarioIngresada >= 18) && edadusuarioIngresada <= 120) {
             isMayorEdad = true;
         } else {
-           isMayorEdad = false;
+            isMayorEdad = false;
             System.out.println("Edad no valida para utilizar esta aplicacion ");
             System.out.print("Volviendo al menu");
             System.out.print(".");
@@ -236,9 +271,6 @@ public class Persona {
         new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
         return isMayorEdad;
     }
-
-
-
 
 
     public static boolean verificarMayoriaEdadUsuario(int edadusuarioIngresada) {

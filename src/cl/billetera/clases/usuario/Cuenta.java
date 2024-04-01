@@ -4,7 +4,6 @@
 
 package cl.billetera.clases.usuario;
 
-import com.sun.jdi.InternalException;
 
 import java.io.IOException;
 import java.util.Scanner;
@@ -13,6 +12,9 @@ import java.util.concurrent.TimeUnit;
 
 public abstract class Cuenta extends Persona {
 
+    /**
+     * setea el saldo en la cuenta en $0
+     */
     public static double saldoEnLaCuenta = 0;
 
 
@@ -22,23 +24,32 @@ public abstract class Cuenta extends Persona {
     }
 
 
+    /**
+     * permite acceder al saldo en la cuenta
+     */
     public static long getSaldoEnLaCuenta() {
 
         return (long) saldoEnLaCuenta;
     }
 
 
-
+    /**
+     * @param saldoEnLaCuenta Pemite guardar saldo en la cuenta
+     */
     public static void setSaldoEnLaCuenta(double saldoEnLaCuenta) {
         Cuenta.saldoEnLaCuenta = saldoEnLaCuenta;
     }
 
+    /**
+     * Este metodo sirve para ver el saldo en la
+     * cuenta
+     */
     public static void verSaldo() throws IOException, InterruptedException {
         new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
 
 
         boolean condicion;
-        condicion=isSesionActiva();
+        condicion = isSesionActiva();
         if (condicion) {
             System.out.println("El saldo en la cuenta es: $" + getSaldoEnLaCuenta());
             System.out.print(".");
@@ -64,12 +75,16 @@ public abstract class Cuenta extends Persona {
 
     }
 
+    /**
+     * Este metodo sirve para ver si la sesion esta activa,
+     * muestra el nombre de usuario, el rut de usuario,
+     * el correo electronico y el saldo en la cuenta
+     */
     public static void verEstadoCuenta() throws InterruptedException, IOException {
         if (Persona.isSesionActiva()) {
-            System.out.println("Informacion visible por 10 segundos");
+            System.out.println("Informacion visible por 10 segundos por seguridad");
             System.out.println("Sesion iniciada");
-            System.out.println("-$"+getSaldoEnLaCuenta()+" pesos");
-            System.out.println("-usuario id=" + getIdUsuario());
+            System.out.println("-$" + getSaldoEnLaCuenta() + " pesos");
             System.out.println("-Nombre de usuario es=" + getNombreUsuario());
             System.out.println("-Rut de usuario es=" + getRutUsuario());
             System.out.println("-Correo electronico es=" + getCorreoElectronico());
@@ -92,6 +107,11 @@ public abstract class Cuenta extends Persona {
         TimeUnit.SECONDS.sleep(1);
     }
 
+    /**
+     * Muestra el menú de transaccion
+     * este menu sirve para llamar a los metodos de transaccion
+     * para retirar y depositar dinero
+     */
     public static void menuDeTransaccion() throws InterruptedException, IOException {
         new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
 
@@ -120,6 +140,9 @@ public abstract class Cuenta extends Persona {
         TimeUnit.SECONDS.sleep(1);
     }
 
+    /**
+     * permite retirar dinero de la cuenta
+     */
     private static void retirarDinero() {
         System.out.println("Cuanto desea retirar dinero?");
         Scanner scanner = new Scanner(System.in);
@@ -128,6 +151,9 @@ public abstract class Cuenta extends Persona {
         setSaldoEnLaCuenta(getSaldoEnLaCuenta() - retirar);
     }
 
+    /**
+     * permite depositar dinero de la cuenta
+     */
     private static void depositarDinero() {
         System.out.println("Cuanto desea depositar?");
         Scanner scanner = new Scanner(System.in);

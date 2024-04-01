@@ -116,7 +116,7 @@ public class Menu {
                         break;
                     case "8":
                         System.out.println("Valores de conversion");
-                        System.out.println("El dolar se paga a $"+ dolar.getDolar()+ "pesos");
+                        System.out.println("El dolar se paga a $" + dolar.getDolar() + "pesos");
                         System.out.println("El euro se paga a $" + euro.getEuro() + "pesos");
                         TimeUnit.SECONDS.sleep(4);
                         break;

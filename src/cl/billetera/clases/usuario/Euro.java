@@ -7,6 +7,11 @@ package cl.billetera.clases.usuario;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * ubicacion de los metodos de Euro que en este caso sirven para convertir
+ * los pesos a euros y viceversa, como tambien sirven para convertir
+ * los pesos en la cuenta a euros
+ */
 public class Euro implements Conversor {
     public double euro = 910;
 
@@ -37,7 +42,7 @@ public class Euro implements Conversor {
                         System.out.println("Pesos a Euro");
                         System.out.println("Ingrese cantidad a convertir");
                         double peso = scanner.nextDouble();
-                        System.out.println("$"+ peso + " pesos son: " + peso * getEuro() + " euros");
+                        System.out.println("$" + peso + " pesos son: " + peso * getEuro() + " euros");
                         System.out.print("Volviendo al menu");
                         System.out.print(".");
                         TimeUnit.SECONDS.sleep(1);
@@ -47,7 +52,7 @@ public class Euro implements Conversor {
                         TimeUnit.SECONDS.sleep(1);
                         //limpiar consola
                         new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
-                        seguir=false;
+                        seguir = false;
                         break;
 
                     case "2":
@@ -66,14 +71,14 @@ public class Euro implements Conversor {
                         //limpiar consola
                         new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
 
-                        seguir=false;
+                        seguir = false;
                         break;
 
                     case "3":
                         //menu 3
                         System.out.println("Pesos en la cuenta a Euro");
 
-                        System.out.println("$" + Cuenta.getSaldoEnLaCuenta() + " pesos son: " +Cuenta.getSaldoEnLaCuenta()/getEuro()+ " euros");
+                        System.out.println("$" + Cuenta.getSaldoEnLaCuenta() + " pesos son: " + Cuenta.getSaldoEnLaCuenta() / getEuro() + " euros");
                         System.out.print("Volviendo al menu");
                         System.out.print(".");
                         TimeUnit.SECONDS.sleep(1);
@@ -84,7 +89,7 @@ public class Euro implements Conversor {
                         //limpiar consola
                         new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
 
-                        seguir=false;
+                        seguir = false;
                         break;
 
                     case "4":
