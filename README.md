@@ -99,20 +99,20 @@ ahorrar tiempo y evita la necesidad de busear dentro del codigo en caso de tener
 
 
 ## EJECUCION CON BASH
-Analizando la practicidad del codigo se decidio investigar como ejecutar con un doble click el artifact generado por
-el ide, ya que asi se puede confirmar el funcionamiento de los comandos de consola compatibles con windows, estos 
-comando realizan una limpieza del stream de caracteres entregados por la aplicacion java, lo que mantiene limpia la 
-interfaz y en caso de existir datos sensibles estos no podran ser vistos en el historial.
+Analizando la practicidad del código se decidio investigar como ejecutar con un doble click el artifact generado por
+el IDE, ya que asi se puede confirmar el funcionamiento de los comandos de consola compatibles con windows, este 
+comando realizan una limpieza del stream de caracteres entregados por la aplicaciÓn java, lo que mantiene limpia la 
+interfaz y en caso de existir datos sensibles estos no podrían ser vistos en el historial.
 
 <img alt="ejecutar desde archivo bash el artifact" height="290" src="https://github.com/noscriptph/TrabajoBilletera/assets/103396791/66909744-4cea-40af-a12b-5bfbf103cb63" width="600"/>
 
-<img alt="referencia a la ejecucion desde bash" height="500" src="https://github.com/noscriptph/TrabajoBilletera/assets/103396791/abc8d1a8-3540-403f-9c1b-a30eabbe4595" width="600"/>
+<img alt="referencia a la ejecución desde bash" height="500" src="https://github.com/noscriptph/TrabajoBilletera/assets/103396791/abc8d1a8-3540-403f-9c1b-a30eabbe4595" width="600"/>
 
 Esto me sirvio para hacer pruebas sin emular el terminal o consola
 
 ## BLOQUES DE CODIGO REUTILIZABLE
-Viendo que tuve la necesidad de reutilizar codigo como es el caso del switch y que este cuente con exsepsión de errores 
-pense que seria bueno empezar a crear un repositorio con estos bloques, pensando en el futuro y por si a alguien mas le
+Viendo que tuve la necesidad de reutilizar código como es el caso del switch y que este cuente con exsepsión de errores 
+pense que sería bueno empezar a crear un repositorio con estos bloques, pensando en el futuro y por si a alguien mas le
 pueda servir
 este es el link por si gustas de contribuir
 [link](https://github.com/noscriptph/CodeBlocks/tree/main)
