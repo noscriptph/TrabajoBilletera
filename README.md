@@ -100,6 +100,15 @@ aplicacion java, lo que mantiene limpia la interfaz y en caso de existir datos s
 
 Esto me sirvio para hacer pruebas sin emular el terminal o consola
 
+## BLOQUES DE CODIGO REUTILIZABLE
+Viendo que tuve la necesidad de reutilizar codigo como es el caso del switch y que este cuente con esepcion de errores pense que seria
+bueno empezar a crear un repositorio con estos bloques, pensando en el futuro y por si a alguien mas le pueda servir
+este es el link por si gustas de contribuir
+
+
+![repositorio de codigos de uso rapido](https://github.com/noscriptph/TrabajoBilletera/assets/103396791/7da78f9d-d6b8-427b-aa7c-ace8cdcf9cb3)
+
+
 ## REFERENCIAS
 
 -Youtube [INTERFACE](https://www.youtube.com/watch?v=9fkpLb6rSY8)
