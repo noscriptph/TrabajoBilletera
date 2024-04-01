@@ -81,6 +81,13 @@ Se empezó de cero la escritura de la función de cambio de moneda ya que uno de
 
 Otro problema encontrado fue hacer el llamado de un getter de tipo bolean de forma getBoolean, pero se debia realizar asi isBoolean, cambiando esto fue posible solucionar un problema con los inicios de sesion y la comprobacion de que la sesion estaba iniciada.
 
+## DIAGRAMA UML
+Destinado a ser una ayuda visual de lo que contiene el codigo y como esta populado, es idealmente usado en ambientes profesionales para que los
+programadores puedan saber donde encontrar las clases y que metodos contienen, esto permite ahorrar tiempo y evita la necesidad de busear dentro del codigo en caso
+de tener algun requerimiento muy especifico
+
+![diagrama uml](https://github.com/noscriptph/TrabajoBilletera/assets/103396791/536d9206-0548-49ef-b8df-573383a7df67)
+
 
 ## EJECUCION CON BASH
 Analizando la practicidad del codigo se decidio investigar como ejecutar con un doble click el artifact generado por el ide, ya que asi se puede confirmar
@@ -89,7 +96,7 @@ aplicacion java, lo que mantiene limpia la interfaz y en caso de existir datos s
 ![ejecutar desde archivo bash el artifact](https://github.com/noscriptph/TrabajoBilletera/assets/103396791/66909744-4cea-40af-a12b-5bfbf103cb63)
 
 ![referencia a la ejecucion desde bash](https://github.com/noscriptph/TrabajoBilletera/assets/103396791/abc8d1a8-3540-403f-9c1b-a30eabbe4595)
-
+Esto me sirvio para hacer pruebas sin emular el terminal o consola
 
 ## REFERENCIAS
 
