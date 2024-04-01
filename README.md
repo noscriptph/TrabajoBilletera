@@ -82,10 +82,20 @@ Se empezó de cero la escritura de la función de cambio de moneda ya que uno de
 Otro problema encontrado fue hacer el llamado de un getter de tipo bolean de forma getBoolean, pero se debia realizar asi isBoolean, cambiando esto fue posible solucionar un problema con los inicios de sesion y la comprobacion de que la sesion estaba iniciada.
 
 
+## EJECUCION CON BASH
+Analizando la practicidad del codigo se decidio investigar como ejecutar con un doble click el artifact generado por el ide, ya que asi se puede confirmar
+el funcionamiento de los comandos de consola compatibles con windows, estos comando realizan una limpieza del stream de caracteres entregados por la
+aplicacion java, lo que mantiene limpia la interfaz y en caso de existir datos sensibles estos no podran ser vistos en el historial.
+![ejecutar desde archivo bash el artifact](https://github.com/noscriptph/TrabajoBilletera/assets/103396791/66909744-4cea-40af-a12b-5bfbf103cb63)
+
+![referencia a la ejecucion desde bash](https://github.com/noscriptph/TrabajoBilletera/assets/103396791/abc8d1a8-3540-403f-9c1b-a30eabbe4595)
+
+
 ## REFERENCIAS
 
-Youtube [INTERFACE](https://www.youtube.com/watch?v=9fkpLb6rSY8)
-VideosClases alkemi
+-Youtube [INTERFACE](https://www.youtube.com/watch?v=9fkpLb6rSY8)
+
+-VideosClases alkemi
 
 
 
